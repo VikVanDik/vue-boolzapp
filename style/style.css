@@ -5,7 +5,7 @@
 }
 
 .container {
-  width: 80vw;
+  width: 80%;
   height: 95vh;
   min-height: 600px;
   margin: 5px auto;
@@ -53,11 +53,42 @@ input {
 
 .chats-container {
   height: calc(100% - 190px);
-  overflow-y: scroll;
   width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
+.chat-preview {
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  background-color: white;
+  position: relative;
+}
 
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 15px;
+}
+
+.name {
+  font-weight: 800;
+}
+
+.last-message {
+  font-size: small;
+  color: grey;
+}
+
+.time {
+  font-size: small;
+  color: grey;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
 
 
 /* CHATS (Lato destro) */
@@ -76,4 +107,24 @@ input {
   height: calc(100% - 70px);
   width: 100%;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  max-width: 60%;
+  width: 25%;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.received {
+  background-color: white;
+}
+
+.sent {
+  align-self: flex-end;
+  background-color: green;
 }
