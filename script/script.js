@@ -176,7 +176,6 @@ createApp ({
   methods : {
   activateChat (index){
     this.counter = index
-    
     return this.counter
   }
 },

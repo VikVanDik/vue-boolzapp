@@ -69,7 +69,7 @@
             <div class="d-flex">
               <img src="./img/avatar_8.jpg" alt="">
               <div class="info">
-                <div></div>
+                <div>{{contacts[counter].name}}</div>
                 <div class="last-access">Ultimo accesso oggi alle: 12:00</div>
               </div>
             </div>
@@ -83,10 +83,12 @@
           </div>
         </div>
         <div class="open-chat-view">
-          <div class="message received">Sciao belo</div>
-          <div class="message received">Sciao belo</div>
-          <div class="message sent">Tuto belo?</div>
-          <div class="message sent">Tuto belo?</div>
+          <div 
+          class="message"
+          v-for = "msg in contacts[counter].messages" 
+          :class = "msg.status === 'received' ? 'received' : 'sent'">{{msg.message}}
+          <span class="date-message">{{msg.date}}</span>
+          </div>
         </div>
         <div class="open-chat-footer d-flex">
           <div class="emoticon">
