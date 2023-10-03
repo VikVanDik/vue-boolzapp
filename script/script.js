@@ -188,16 +188,8 @@ createApp ({
         }
     ],
 
-
-    // createdMessage : {
-    //     date : '',
-    //     hour : '',
-    //     message : '',
-    //     status: 'sent'
-    // },
-
     counter : 0,
-    
+    newMessage : ''
     }
   },
 
