@@ -188,14 +188,13 @@ createApp ({
         }
     ],
 
-    newMessage : '',
 
-    createdMessage : {
-        date : '',
-        hour : '',
-        message : '',
-        status: 'sent'
-    },
+    // createdMessage : {
+    //     date : '',
+    //     hour : '',
+    //     message : '',
+    //     status: 'sent'
+    // },
 
     counter : 0,
     
@@ -209,7 +208,13 @@ createApp ({
   },
 
   pushMessage () {
-    this.createdMessage.message = this.newMessage
+    let createdMessage = {
+        date : '',
+        hour : '',
+        message : '',
+        status: 'sent'
+    }
+    createdMessage.message = this.newMessage
     this.contacts[this.counter].messages.push(this.createdMessage)
   }
 
