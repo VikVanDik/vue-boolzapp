@@ -214,7 +214,8 @@ createApp ({
         message : '',
         status: 'sent'
     }
-    createdMessage.message = this.newMessage
+    this.createdMessage.message = this.newMessage
+    console.log(createdMessage);
     this.contacts[this.counter].messages.push(this.createdMessage)
   }
 
