@@ -188,9 +188,17 @@ createApp ({
         }
     ],
 
+    newMessage : '',
+
+    createdMessage : {
+        date : '',
+        hour : '',
+        message : this.newMessage,
+        status: 'sent'
+    },
+
     counter : 0,
     
-
     }
   },
 
@@ -198,7 +206,12 @@ createApp ({
   activateChat (index){
     this.counter = index
     return this.counter
+  },
+
+  pushMessage () {
+    this.contacts[this.counter].messages.push(this.createdMessage)
   }
+
 },
 
   mounted () {
