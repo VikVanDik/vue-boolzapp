@@ -208,17 +208,34 @@ createApp ({
   },
 
   pushMessage () {
-    let createdMessage = {
-        date : '',
-        hour : '',
-        message : '',
-        status: 'sent'
-    }
-    this.createdMessage.message = this.newMessage
-    console.log(createdMessage);
-    this.contacts[this.counter].messages.push(this.createdMessage)
-  }
 
+    if (this.newMessage < 1) {
+        console.log('Messaggio Vuoto');
+    } else {
+        let createdMessage = {
+            date : '',
+            hour : '',
+            message : '',
+            status: 'sent'
+        }
+        createdMessage.message += this.newMessage
+        console.log(createdMessage);
+        this.contacts[this.counter].messages.push(createdMessage)
+        this.newMessage = ''
+    }
+  },
+
+  response () {
+      let responseMessage = {
+          date : '',
+          hour : '',
+          message : 'Ok!',
+          status: 'received'
+      }
+      setTimeout (() => {
+          this.contacts[this.counter].messages.push(responseMessage)
+      }, 1000);
+  },
 },
 
   mounted () {

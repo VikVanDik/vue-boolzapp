@@ -98,7 +98,7 @@
           type="search"
           placeholder="Scrivi un messaggio"
           v-model="newMessage"
-          @keyUp.enter="pushMessage()">
+          @keyUp.enter="pushMessage(), response()">
           <div class="mic">
             <i class="fa-solid fa-microphone"></i>  
           </div>
