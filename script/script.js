@@ -193,7 +193,7 @@ createApp ({
     createdMessage : {
         date : '',
         hour : '',
-        message : this.newMessage,
+        message : '',
         status: 'sent'
     },
 
@@ -209,6 +209,7 @@ createApp ({
   },
 
   pushMessage () {
+    this.createdMessage.message = this.newMessage
     this.contacts[this.counter].messages.push(this.createdMessage)
   }
 
