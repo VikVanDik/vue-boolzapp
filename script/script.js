@@ -1,4 +1,5 @@
 const {createApp} = Vue;
+const dt = luxon.DateTime;
 
 createApp ({
   data () {
@@ -187,7 +188,7 @@ createApp ({
             ],
         }
     ],
-
+    hour : dt.now().setLocale('it').toLocaleString(dt.TIME_SIMPLE),
     counter : 0,
     newMessage : ''
     }
@@ -204,9 +205,10 @@ createApp ({
     if (this.newMessage < 1) {
         console.log('Messaggio Vuoto');
     } else {
+        
         let createdMessage = {
             date : '',
-            hour : '',
+            hour : this.hour,
             message : '',
             status: 'sent'
         }
@@ -220,7 +222,7 @@ createApp ({
   response () {
       let responseMessage = {
           date : '',
-          hour : '',
+          hour : this.hour,
           message : 'Ok!',
           status: 'received'
       }

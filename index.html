@@ -15,6 +15,9 @@
   <!-- VUE -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+  <!-- LUXON -->
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
+
   <!-- PERSONAL -->
   <link rel="stylesheet" href="./style/style.css">
   <title>Boolzapp</title>
@@ -70,7 +73,7 @@
               <img :src="contacts[counter].avatar" alt="">
               <div class="info">
                 <div>{{contacts[counter].name}}</div>
-                <div class="last-access">Ultimo accesso: {{contacts[counter].date}} {{contacts[counter].hour}}</div>
+                <div class="last-access">Ultimo accesso:  </div>
               </div>
             </div>
 
