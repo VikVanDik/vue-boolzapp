@@ -67,7 +67,7 @@
         <div class="open-chat-header d-flex">
           <div class="header-right d-flex">
             <div class="d-flex">
-              <img src="./img/avatar_8.jpg" alt="">
+              <img :src="contacts[counter].avatar" alt="">
               <div class="info">
                 <div>{{contacts[counter].name}}</div>
                 <div class="last-access">Ultimo accesso oggi alle: 12:00</div>
@@ -87,7 +87,7 @@
           class="message"
           v-for = "msg in contacts[counter].messages" 
           :class = "msg.status === 'received' ? 'received' : 'sent'">{{msg.message}}
-          <span class="date-message">{{msg.date}}</span>
+          <span class="date-message">{{msg.hour}}</span>
           </div>
         </div>
         <div class="open-chat-footer d-flex">
