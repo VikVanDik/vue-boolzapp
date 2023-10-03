@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
   <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous"/>
 
@@ -19,14 +24,34 @@
 
     <div class="container">
       <div class="contacts">
-        <div class="contacts-header debug"></div>
-        <div class="notification debug"></div>
-        <div class="input debug">
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
+        <div class="contacts-header d-flex">
+          <div class="d-flex-c">
+            <img src="./img/avatar_io.jpg" alt="">
+            <div>Sofia</div>
+          </div>
+          <div class="d-flex-c">
+            <i class="fa-solid fa-circle-notch"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+
+        </div>
+        <div class="notification d-flex">
+          <div class="bell d-flex-c">
+            <i class="fa-solid fa-bell-slash"></i>
+          </div>
+          <div class="activate-bell">
+            <div>Ricevi notifiche di nuovi messaggi</div>
+            <div>Attiva notifiche desktop</div>
+          </div>
+        </div>
+        <div class="input">
+          <input type="search" placeholder="Cerca o inizia una nuova chat">
+          <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <div class="chats-container">
           <div class="chat-preview d-flex" v-for="(contact, index) in contacts">
-            <img :src="{{contact.avatar}}" alt="">
+            <img :src="contact.avatar" :alt="contact.name">
             <div class="info">
               <div class="name">{{contact.name}}</div>
               <div class="last-message">Ultimo messaggio inviato</div>
@@ -36,14 +61,38 @@
         </div>
       </div>
       <div class="open-chat">
-        <div class="open-chat-header debug">
-  
+        <div class="open-chat-header d-flex">
+          <div class="header-right d-flex">
+            <div class="d-flex">
+              <img src="./img/avatar_8.jpg" alt="">
+              <div class="info">
+                <div>Michele</div>
+                <div class="last-access">Ultimo accesso oggi alle: 12:00</div>
+              </div>
+            </div>
+
+            <div class="buttons d-flex">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+
+          </div>
         </div>
         <div class="open-chat-view">
           <div class="message received">Sciao belo</div>
           <div class="message received">Sciao belo</div>
           <div class="message sent">Tuto belo?</div>
           <div class="message sent">Tuto belo?</div>
+        </div>
+        <div class="open-chat-footer d-flex">
+          <div class="emoticon">
+            <i class="fa-regular fa-face-smile"></i>
+          </div>
+          <input type="search" placeholder="Scrivi un messaggio">
+          <div class="mic">
+            <i class="fa-solid fa-microphone"></i>  
+          </div>
         </div>
       </div>
     </div>
