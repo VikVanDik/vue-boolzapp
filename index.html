@@ -50,7 +50,10 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <div class="chats-container">
-          <div class="chat-preview d-flex" v-for="(contact, index) in contacts">
+          <div class="chat-preview d-flex" 
+          v-for="(contact, index) in contacts"
+          @click="activateChat(index)"
+          :class="counter === index ? 'active' : ''">
             <img :src="contact.avatar" :alt="contact.name">
             <div class="info">
               <div class="name">{{contact.name}}</div>
@@ -66,7 +69,7 @@
             <div class="d-flex">
               <img src="./img/avatar_8.jpg" alt="">
               <div class="info">
-                <div>Michele</div>
+                <div></div>
                 <div class="last-access">Ultimo accesso oggi alle: 12:00</div>
               </div>
             </div>

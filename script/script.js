@@ -165,9 +165,24 @@ createApp ({
                 }
             ],
         }
-    ]
+    ],
+
+    counter : 0,
     
+
     }
+  },
+
+  methods : {
+  activateChat (index){
+    this.counter = index
+    
+    return this.counter
+  }
+},
+
+  mounted () {
+
   }
 }).mount ('#app')
 
