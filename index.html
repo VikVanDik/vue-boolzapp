@@ -25,8 +25,8 @@
           <input type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="chats-container">
-          <div class="chat-preview d-flex" v-for="contact in contacts">
-            <img src="{{contact.avatar}}" alt="">
+          <div class="chat-preview d-flex" v-for="(contact, index) in contacts">
+            <img :src="{{contact.avatar}}" alt="">
             <div class="info">
               <div class="name">{{contact.name}}</div>
               <div class="last-message">Ultimo messaggio inviato</div>
@@ -41,6 +41,8 @@
         </div>
         <div class="open-chat-view">
           <div class="message received">Sciao belo</div>
+          <div class="message received">Sciao belo</div>
+          <div class="message sent">Tuto belo?</div>
           <div class="message sent">Tuto belo?</div>
         </div>
       </div>
