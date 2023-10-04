@@ -247,13 +247,13 @@ createApp ({
     return lastHour
   },
 
-  searchContact () {
-    if (!this.contacts.name.includes(this.research)) {
-        isIncluded = false
+  searchName (index) {
+    let returnName = this.contacts[index].name.toUpperCase()
+    let researchComp = this.research.toUpperCase()
+    if (researchComp.trim() > 0) {
+        return this.contacts.filter((contact) => returnName.includes(researchComp))
     }
   }
-
-
 },
 
   mounted () {

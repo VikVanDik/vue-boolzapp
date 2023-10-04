@@ -53,16 +53,15 @@
           type="search" 
           placeholder="Cerca o inizia una nuova chat"
           v-model="research"
-          @keyup="searchContact ()"
           >
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <div class="chats-container">
           <div class="chat-preview d-flex" 
-          v-for="(contact, index) in contacts"
+          v-for="(contact, index) in searchName(contact)"
           @click="activateChat(index)"
           :class="counter === index ? 'active' : ''"
-          :class="isIncluded === false ? 'd-none' : ''">
+          >
           
             <img :src="contact.avatar" :alt="contact.name">
             <div class="info">
