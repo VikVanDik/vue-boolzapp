@@ -62,7 +62,7 @@
           v-for="(contact, index) in contacts"
           @click="activateChat(index)"
           :class="counter === index ? 'active' : ''"
-          :class="isIncluded === true ? 'd-none' : ''">
+          :class="isIncluded === false ? 'd-none' : ''">
           
             <img :src="contact.avatar" :alt="contact.name">
             <div class="info">

@@ -239,13 +239,11 @@ createApp ({
 
   getLastHour () {
     let lastHour = this.contacts[this.counter].messages.at(-1).hour
-    console.log(lastHour);
     return lastHour
   },
 
   getLastHourI (index) {
     let lastHour = this.contacts[index].messages.at(-1).hour
-    console.log(lastHour);
     return lastHour
   },
 
