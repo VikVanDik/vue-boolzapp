@@ -49,20 +49,27 @@
           </div>
         </div>
         <div class="input">
-          <input type="search" placeholder="Cerca o inizia una nuova chat">
+          <input 
+          type="search" 
+          placeholder="Cerca o inizia una nuova chat"
+          v-model="research"
+          @keyup="searchContact ()"
+          >
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <div class="chats-container">
           <div class="chat-preview d-flex" 
           v-for="(contact, index) in contacts"
           @click="activateChat(index)"
-          :class="counter === index ? 'active' : ''">
+          :class="counter === index ? 'active' : ''"
+          :class="isIncluded === true ? 'd-none' : ''">
+          
             <img :src="contact.avatar" :alt="contact.name">
             <div class="info">
               <div class="name">{{contact.name}}</div>
-              <div class="last-message">Ultimo messaggio inviato</div>
+              <div class="last-message"><span>{{getLastMessage(index)}}</span></div>
             </div>
-            <div class="time">12.00</div>
+            <div class="time">{{getLastHourI(index)}}</div>
           </div>
         </div>
       </div>
@@ -73,7 +80,7 @@
               <img :src="contacts[counter].avatar" alt="">
               <div class="info">
                 <div>{{contacts[counter].name}}</div>
-                <div class="last-access">Ultimo accesso:  </div>
+                <div class="last-access">Ultimo accesso alle: {{getLastHour()}}  </div>
               </div>
             </div>
 
@@ -89,7 +96,7 @@
           <div 
           class="message"
           v-for = "msg in contacts[counter].messages" 
-          :class = "msg.status === 'received' ? 'received' : 'sent'">{{msg.message}}
+          :class = "msg.status">{{msg.message}}
           <span class="date-message">{{msg.hour}}</span>
           </div>
         </div>
@@ -101,7 +108,7 @@
           type="search"
           placeholder="Scrivi un messaggio"
           v-model="newMessage"
-          @keyUp.enter="pushMessage(), response()">
+          @keyup.enter="pushMessage(), response()">
           <div class="mic">
             <i class="fa-solid fa-microphone"></i>  
           </div>

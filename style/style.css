@@ -116,6 +116,14 @@ body {
   position: relative;
 }
 
+.chat-preview:hover {
+  background-color: #E9EBEB;
+}
+
+.active {
+  background-color: #E9EBEB;
+}
+
 img {
   width: 50px;
   height: 50px;
@@ -238,6 +246,3 @@ img {
   background-color: #D5F9BA;
 }
 
-.active {
-  background-color: #E9EBEB;
-}

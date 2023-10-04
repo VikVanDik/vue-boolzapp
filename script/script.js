@@ -190,7 +190,9 @@ createApp ({
     ],
     hour : dt.now().setLocale('it').toLocaleString(dt.TIME_SIMPLE),
     counter : 0,
-    newMessage : ''
+    newMessage : '',
+    research : '',
+    isIncluded : true
     }
   },
 
@@ -201,7 +203,6 @@ createApp ({
   },
 
   pushMessage () {
-
     if (this.newMessage < 1) {
         console.log('Messaggio Vuoto');
     } else {
@@ -230,6 +231,31 @@ createApp ({
           this.contacts[this.counter].messages.push(responseMessage)
       }, 1000);
   },
+
+  getLastMessage (index) {
+    let lastMessage = this.contacts[index].messages.at(-1).message
+    return lastMessage
+  },
+
+  getLastHour () {
+    let lastHour = this.contacts[this.counter].messages.at(-1).hour
+    console.log(lastHour);
+    return lastHour
+  },
+
+  getLastHourI (index) {
+    let lastHour = this.contacts[index].messages.at(-1).hour
+    console.log(lastHour);
+    return lastHour
+  },
+
+  searchContact () {
+    if (!this.contacts.name.includes(this.research)) {
+        isIncluded = false
+    }
+  }
+
+
 },
 
   mounted () {
