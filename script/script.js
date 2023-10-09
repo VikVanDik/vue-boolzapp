@@ -247,7 +247,7 @@ createApp ({
     return lastHour
   },
 
-  Search(contact) {
+  Search() {
     return this.contacts.filter(contact => {
       return contact.name.toLowerCase().includes(this.research.toLowerCase()),
       console.log(this.research)
