@@ -247,13 +247,14 @@ createApp ({
     return lastHour
   },
 
-  searchName (index) {
-    let returnName = this.contacts[index].name.toUpperCase()
-    let researchComp = this.research.toUpperCase()
-    if (researchComp.trim() > 0) {
-        return this.contacts.filter((contact) => returnName.includes(researchComp))
+  Search(contact) {
+    return this.contacts.filter(contact => {
+      return contact.name.toLowerCase().includes(this.research.toLowerCase()),
+      console.log(this.research)
+    })
+    
     }
-  }
+
 },
 
   mounted () {

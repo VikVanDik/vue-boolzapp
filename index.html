@@ -58,7 +58,7 @@
         </div>
         <div class="chats-container">
           <div class="chat-preview d-flex" 
-          v-for="(contact, index) in searchName(contact)"
+          v-for="(contact, index) in Search(contacts)"
           @click="activateChat(index)"
           :class="counter === index ? 'active' : ''"
           >
